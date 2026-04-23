@@ -1,0 +1,64 @@
+//
+// !!! WARNING !!! AUTO-GENERATED FILE!
+// PLEASE DO NOT MODIFY IT AND USE "platformio.ini":
+// https://docs.platformio.org/page/projectconf/section_env_build.html#build-flags
+//
+{
+    "configurations": [
+        {
+            "name": "PlatformIO",
+            "includePath": [
+                "C:/Users/jmath/Downloads/mcp-vs-main/mcp-vs-main/include",
+                "C:/Users/jmath/Downloads/mcp-vs-main/mcp-vs-main/src",
+                "C:/Users/jmath/Downloads/mcp-vs-main/mcp-vs-main/lib/serial",
+                "C:/Users/jmath/Downloads/mcp-vs-main/mcp-vs-main/lib/timer",
+                "C:/Users/jmath/Downloads/mcp-vs-main/mcp-vs-main/lib/lcd",
+                "C:/Users/jmath/Downloads/mcp-vs-main/mcp-vs-main/lib/adc",
+                "C:/Users/jmath/.platformio/packages/framework-arduino-avr/cores/arduino",
+                "C:/Users/jmath/.platformio/packages/framework-arduino-avr/variants/mega",
+                "C:/Users/jmath/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
+                "C:/Users/jmath/.platformio/packages/framework-arduino-avr/libraries/HID/src",
+                "C:/Users/jmath/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
+                "C:/Users/jmath/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src",
+                "C:/Users/jmath/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
+                ""
+            ],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true,
+                "path": [
+                    "C:/Users/jmath/Downloads/mcp-vs-main/mcp-vs-main/include",
+                    "C:/Users/jmath/Downloads/mcp-vs-main/mcp-vs-main/src",
+                    "C:/Users/jmath/Downloads/mcp-vs-main/mcp-vs-main/lib/serial",
+                    "C:/Users/jmath/Downloads/mcp-vs-main/mcp-vs-main/lib/timer",
+                    "C:/Users/jmath/Downloads/mcp-vs-main/mcp-vs-main/lib/lcd",
+                    "C:/Users/jmath/Downloads/mcp-vs-main/mcp-vs-main/lib/adc",
+                    "C:/Users/jmath/.platformio/packages/framework-arduino-avr/cores/arduino",
+                    "C:/Users/jmath/.platformio/packages/framework-arduino-avr/variants/mega",
+                    "C:/Users/jmath/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
+                    "C:/Users/jmath/.platformio/packages/framework-arduino-avr/libraries/HID/src",
+                    "C:/Users/jmath/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
+                    "C:/Users/jmath/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src",
+                    "C:/Users/jmath/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
+                    ""
+                ]
+            },
+            "defines": [
+                "PLATFORMIO=60119",
+                "ARDUINO_AVR_MEGA2560",
+                "F_CPU=16000000L",
+                "ARDUINO_ARCH_AVR",
+                "ARDUINO=10808",
+                "__AVR_ATmega2560__",
+                ""
+            ],
+            "cStandard": "gnu11",
+            "cppStandard": "gnu++11",
+            "compilerPath": "C:/Users/jmath/.platformio/packages/toolchain-atmelavr/bin/avr-gcc.exe",
+            "compilerArgs": [
+                "-mmcu=atmega2560",
+                ""
+            ]
+        }
+    ],
+    "version": 4
+}
