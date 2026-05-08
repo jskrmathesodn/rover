@@ -43,6 +43,10 @@ EICRA &= ~(1 << ISC00);
 
 EIMSK |= (1 << INT0);
 
+DDRB |= (1 << PB7); // LED on pin 13
+
+uint32_t last_toggle = 0;
+
 // Enable global interrupts
 sei();
 
@@ -53,6 +57,8 @@ while(1)
 	{
     serial2_get_data(recievedData,3); //Function takes the array to return data to and the number of bytes to be read.
     char buf[16];
+    sprintf(buf, "Pwr:%3u%%  Range:%3ucm \n", recievedData[0] * 100 / 130, recievedData[2]);
+    serial0_print_string(buf);
   }
 
   if (mode == 0) {
@@ -66,7 +72,7 @@ while(1)
   }
   front_range = recievedData[2];
   current_ms = milliseconds_now();
-  battery_percentage = recievedData[0]*100/118;
+  battery_percentage = recievedData[0] * 100 / 130;
   ldr_value = recievedData[1];
   char buf[16];
   sprintf(buf, "Pwr:%3u%% %s  ", battery_percentage, mode_str);
@@ -75,6 +81,13 @@ while(1)
   sprintf(buf, "LDR:%3u Dist:%3ucm", ldr_value, front_range);
   lcd_goto(0x40);
   lcd_puts(buf);
+
+  uint32_t know = milliseconds_now();
+        if ((know - last_toggle) >= 100) // 1000/15/2 = 33ms half period
+        {
+            PORTB ^= (1 << PB7);
+            last_toggle = know;
+        }
 
 	if ((current_ms-last_send_ms) >= 100) //sending rate controlled here
 	{
@@ -98,12 +111,10 @@ ISR(INT1_vect)
       if (button_state == 0) {
         button_state = 1;
         last_press = now;
-        serial0_print_string("Button Pressed\n");
       }
       else {
         button_state = 0;
         last_press = now;
-        serial0_print_string("Button Released\n");
       }
     }
 }
